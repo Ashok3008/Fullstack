@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy Center Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #4cae4c;
+        }
+        .next-page {
+            display: none;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+        .nav-links li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login to Lily Academy Center</h2>
+    <form id="loginForm">
+        <input type="email" id="username" placeholder="Email ID" required>
+        <input type="password" id="password" placeholder="Password (max 8 characters)" maxlength="8" required>
+        <button type="submit">Login</button>
+    </form>
+    <p id="message" style="color: red;"></p>
+</div>
+
+<div class="next-page" id="nextPage">
+    <nav class="navbar">
+        <div class="logo">Lilly Academy🚀</div>
+        <ul class="nav-links">
+            <li><a href="register.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>Welcome to Lilly Academy!</h1>
+    <p>This is your dashboard.</p>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (email === 'dhivyap.22eie@kongu.edu' && password === 'Password') {
+            // Hide login container and show the next page
+            document.querySelector('.login-container').style.display = 'none';
+            document.getElementById('nextPage').style.display = 'block';
+        } else {
+            document.getElementById('message').textContent = 'Invalid username or password.';
+        }
+    });
+</script>
+
+</body>
+</html>
